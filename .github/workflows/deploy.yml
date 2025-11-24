@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository | tolower }} # Verrà risolto in casuhoan/note
+  IMAGE_NAME: ${{ toLower(github.repository) }} # Verrà risolto in casuhoan/note
 
 jobs:
   build-and-push:
