@@ -1,0 +1,33 @@
+CREAZIONE SITO LIBRERIA
+
+Tipo sito (puoi aggiungerne altri se ne hai bisogno): PHP, HTML, CSS e Javascript
+Sarà accessibile al dominio: library.grandius.it
+
+Backend:
+1. Il sito servirà a pubblicare libri e capitoli, ma non vorrei fosse una pagina con del testo e basta, vorrei che fosse interattivo e mi aiutasse a ricevere informazioni per me.
+2. Vorrei che per accedere alla pagina passi prima da un login, dove chiederà utente e password.
+3. Gli utenti saranno di due tipi: admin e user. 
+Gli admin possono creare utenti e visualizzare pagine riservate, mentre gli utenti normali possono fare solo azioni pubbliche.
+Tutti gli utenti sono collegati ad un ID univoco e avranno la loro cartella in "/maindir/data/users/".
+Ogni utente avrà queste caratteristiche: Nome Utente, ID univoco, Password, Avatar, TemaSelezionato e LibriAutorizzati.
+L'ID Univoco verrà generato casualmente.
+4. Tutti i dati dei capitoli sono dentro la cartella del libro "/maindir/data/users/[nomeUtente]/[NomeLibro]/", mentre i dati del libro sono in un CSV a parte sempre dentro lì.
+5. La cartella DATA ho intenzione di non farla sincronizzare con i push, quindi considera l'idea di inserire una funzione di Migrazione dati che copia il contenuto di una eventuale cartella temporanea e la copia in data.
+6. I libri possono essere pubblici (visibili da tutti tramite link) o privati (gli utenti devono per forza essere autorizzati per vederli).
+7. Il proprietario di un libro può entrare nella modalità edit e autorizzare determinati utenti a modificarlo (solo una persona può entrare nella modalità edit di un libro nello stesso momento).
+Inoltre se il libro è privato può anche autorizzare determinate persone a leggerlo.
+8. Nella modalità edit una persona può modificare il testo delle varie pagine tramite apposite textareas, modificare/aggiungere parole chiave che hanno un fumetto con la descrizione (spiegato al punto 4 della front end) e leggere/scrivere nuovi pezzi di riassunto nella parte destra della pagina (queste cose saranno dei piccoli paragrafi che potrai aprire a piacimento e che conterranno dei pezzi di riassunto che ti serviranno per ricordarti le cose.
+
+Front end:
+1. La pagina principale visualizzerà tutti i tuoi lavori/libri e i libri a cui hai accesso e che stai leggendo.
+2. I libri hanno una specie di card 9:16 con la copertina del capitolo e il titolo (in caso non ci fosse la copertina rendi la card bella.
+3. Entrando nel libro per la prima volta ci sarà una pagina di indice con tutti i titoli dei capitoli.
+4. Entrando dentro un capitolo ti aprirà la pagina con il titolo, il titolo del capitolo e le varie pagine di testo situate al centro della pagina. Alcune parole saranno sottolineate, quelle parole se ci passi sopra col mouse faranno comparire un fumetto con la descrizione della parola (Le parole con didascalia sono impostate nella fase di edit del sito).
+Alla destra della pagina vedrai una piccola colonna con la gestione dei segnalibri, cioè cliccando su un pulsante all'altezza di una riga, metterà un segnalibro su quella esatta riga, che potrà essere eliminato o rinominato.
+Tutti i segnalibri saranno visibili nella parte sinistra della pagina divisi per capitoli e cliccandoli ti porterà al capitolo e alla riga esatta.
+5. Invece i proprietari dei libri (e le persone autorizzate alla modifica) potranno entrare sul libro e premere su Modifica in alto a destra della pagina indice. 
+Questo pulsante aprirà la pagina di modalità edit, dove ti aprirà un indice simile a quello della pagina principale del libro, ma con dei pulsanti a destra dove potrai modificare il nome del capitolo e l'ordine dei capitoli.
+Premendo sul nome del capitolo aprirà una pagina simile a quella di lettura (ma sempre in modalità edit) dove potrai modificare il testo e aggiungere parole chiave. Inoltre a destra avrai una colonna con delle piccole sezioni che si potranno aprire per visualizzare i riassunti. Inoltre tramite apposito pulsante, potrai anche entrare nella pagina di gestione riassunti dove puoi scriverli, modificare quelli esistenti o catalogarli (quelli catalogati saranno sotto la stessa sezione).
+6. Infine ci sarà una Nav bar in alto con queste pagine: Home (quello che ti ho detto), libri pubblici (dove vedrai solo i libri pubblici in ordine di uscita), tuoi libri (quelli che hai creato), libri in corso di lettura (dove vedrai i libri a cui non hai ancora dato una recensione, che chiederà in una pagina dopo l'ultima pagina del libro), uno switch per la selezione del tema (chiaro o scuro) e il nome utente che avrà di fianco l'immagine avatar dell'utente rimpiccolino e aprirà un menù a tendina con le seguenti pagine: Impostazioni e logout.
+Nelle impostazioni ci saranno varie pagine dove si possono modificare tutte le opzioni dell'utente (tutti i vari parametri), l'aspetto (tema) e l'autenticazione.
+

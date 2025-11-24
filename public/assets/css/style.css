@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #f4f7f9;
+    --text-color: #333;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --card-bg-color: #ffffff;
+    --navbar-bg-color: #343a40;
+    --navbar-text-color: #f8f9fa;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #f8f9fa;
+    --primary-color: #007bff;
+    --secondary-color: #adb5bd;
+    --card-bg-color: #2c2c2c;
+    --navbar-bg-color: #111;
+    --navbar-text-color: #f8f9fa;
+    --border-color: #444;
+    --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+main {
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--navbar-text-color);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+/* --- Stili Navbar Custom --- */
+.navbar {
+    background-color: var(--navbar-bg-color) !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .nav-link.dropdown-toggle,
+#themeSwitchLabel {
+    color: var(--navbar-text-color);
+}
+
+.navbar .nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Fix per l'icona del toggler che potrebbe non essere visibile */
+[data-theme="light"] .navbar-toggler-icon {
+    filter: invert(1) grayscale(100) brightness(200%);
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+    filter: none; /* L'icona di default è bianca e va bene su sfondi scuri */
+}
+
+.navbar .dropdown-menu a {
+    color: var(--text-color);
+}
+
+/* Stili custom aggiuntivi per Bootstrap */
+.dropdown-menu[data-bs-theme="dark"] {
+    --bs-dropdown-bg: var(--card-bg-color);
+    --bs-dropdown-link-color: var(--text-color);
+    --bs-dropdown-link-hover-bg: var(--bg-color);
+}
+
+.form-switch .form-check-input {
+    cursor: pointer;
+}
+
+#themeSwitchLabel {
+    width: 20px; /* Per non far spostare il layout quando cambia l'icona */
+    text-align: center;
+}
+
+/* Stili custom per le card dei libri */
+.book-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+.book-card .card-img-top {
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+}
+.book-card .book-card-placeholder {
+    aspect-ratio: 9 / 16;
+}
+
+/* --- Stili Layout Lettore --- */
+.reader-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.reader-left-col, .reader-right-col {
+    padding: 20px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.reader-content {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    line-height: 1.6;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.reader-right-col {
+    position: relative;
+}
+
+.line-wrapper:hover {
+    background-color: var(--bg-color);
+}
+
+.bookmark-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg-color);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    padding: 0;
+}
+
+.summary-category {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.summary-category summary {
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: var(--bg-color);
+}
+
+.summary-item {
+    padding: 10px;
+    border-top: 1px solid var(--border-color);
+}

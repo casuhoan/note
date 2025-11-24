@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount del codice per lo sviluppo live
+      # La cartella 'data' viene montata esplicitamente per persistere i dati
+      - ./public:/var/www/html/public
+      - ./src:/var/www/html/src
+      - ./templates:/var/www/html/templates
+      - ./api:/var/www/html/api
+      - ./data:/var/www/html/data
+
+# Networks (opzionale per un singolo servizio)
+# networks:
+#   webnet:
