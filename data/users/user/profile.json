@@ -1,0 +1,9 @@
+{
+    "username": "user",
+    "id": "b1b1b1b1-b1b1-41b1-b1b1-b1b1b1b1b1b1",
+    "password_hash": "$2y$12$E6v1wyjfQecZdpSKtSCXvu5RnNB9nzCmXxzCV5Goqyvsr/GmNfKbK",
+    "avatar": "default.png",
+    "theme": "light",
+    "authorized_books": [],
+    "role": "user"
+}

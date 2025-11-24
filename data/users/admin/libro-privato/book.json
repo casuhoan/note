@@ -1,0 +1,8 @@
+{
+    "title": "Libro Privato",
+    "author": "admin",
+    "cover_image": "cover.jpg",
+    "is_public": false,
+    "authorized_users": ["user"],
+    "authorized_editors": []
+}

@@ -1,9 +1,16 @@
 </main>
 
-<footer class="bg-body-tertiary mt-auto py-5">
+<footer class="py-5 bg-dark" data-bs-theme="dark">
     <div class="container">
         <div class="row">
-            <div class="col-6 col-md-3 mb-3">
+            <div class="col-lg-4 mb-3">
+                <a class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none" href="/">
+                    <span class="fs-5">Libreria</span>
+                </a>
+                <p class="text-body-secondary">Una piattaforma per leggere, scrivere e condividere storie in modo interattivo, costruita con PHP e un pizzico di magia.</p>
+            </div>
+
+            <div class="col-6 col-lg-2 offset-lg-1 mb-3">
                 <h5>Navigazione</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-body-secondary">Home</a></li>
@@ -12,17 +19,23 @@
                 </ul>
             </div>
 
-            <div class="col-md-8 mb-3">
-                <h5>Come funziona questo sito</h5>
-                <p><strong>Libreria</strong> è una piattaforma per leggere, scrivere e condividere storie in modo interattivo. Ecco le funzioni principali:</p>
-                <ul>
-                    <li><strong>Lettore Interattivo:</strong> Passa il mouse sulle parole chiave sottolineate per vederne la descrizione, usa i segnalibri per non perdere il segno e consulta i riassunti a lato della pagina.</li>
-                    <li><strong>Modalità Modifica:</strong> Se sei il proprietario di un libro (o un editor autorizzato), puoi modificare il testo, aggiungere parole chiave, e gestire capitoli, riassunti e permessi.</li>
+            <div class="col-6 col-lg-2 mb-3">
+                <h5>Contatti</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Scrivici</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Segnalazioni</a></li>
+                </ul>
+            </div>
+             <div class="col-6 col-lg-2 mb-3">
+                <h5>Social</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Github</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Instagram</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 mt-4 border-top">
             <p>&copy; <?php echo date("Y"); ?> Libreria. Progetto creato da Gemini.</p>
         </div>
     </div>

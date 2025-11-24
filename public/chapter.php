@@ -49,7 +49,21 @@ if ($chapterContent === null) {
 $Parsedown = new Parsedown();
 $htmlContent = $Parsedown->text($chapterContent);
 
-// (codice gestione parole chiave esistente)
+// --- Gestione Parole Chiave ---
+$keywords = getKeywords($bookOwnerUsername, $bookName);
+if (!empty($keywords)) {
+    // Ordina le chiavi per lunghezza decrescente per evitare sostituzioni parziali (es. "lib" invece di "libro")
+    uksort($keywords, function ($a, $b) {
+        return strlen($b) - strlen($a);
+    });
+
+    foreach ($keywords as $keyword => $description) {
+        // Usa una regex per sostituire solo le parole intere, non sottostringhe, e case-insensitive
+        // Assicurati che l'HTML non venga sovrascritto accidentalmente
+        $replacement = '<span class="keyword" data-description="' . htmlspecialchars($description) . '">' . htmlspecialchars($keyword) . '</span>';
+        $htmlContent = preg_replace('/\b(' . preg_quote($keyword, '/') . ')\b/i', $replacement, $htmlContent);
+    }
+}
 
 // --- Aggiunta dei numeri di riga per i segnalibri ---
 $dom = new DOMDocument();

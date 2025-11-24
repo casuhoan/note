@@ -1,0 +1,8 @@
+{
+    "title": "Il Mio Primo Libro",
+    "author": "admin",
+    "cover_image": "cover.jpg",
+    "is_public": true,
+    "authorized_users": [],
+    "authorized_editors": []
+}

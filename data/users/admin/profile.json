@@ -1,0 +1,9 @@
+{
+    "username": "admin",
+    "id": "a0a0a0a0-a0a0-40a0-a0a0-a0a0a0a0a0a0",
+    "password_hash": "$2y$12$E6v1wyjfQecZdpSKtSCXvu5RnNB9nzCmXxzCV5Goqyvsr/GmNfKbK",
+    "avatar": "default.png",
+    "theme": "light",
+    "authorized_books": [],
+    "role": "admin"
+}

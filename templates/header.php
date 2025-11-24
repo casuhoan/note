@@ -53,4 +53,4 @@
         </div>
     </nav>
 </header>
-<main class="container mt-4">
+<main class="container mt-4 flex-grow-1">
